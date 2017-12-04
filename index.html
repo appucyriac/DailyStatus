@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/element_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
+    <title>Space</title>
+</head>
+
+<body>
+    <main id="main-block">
+        <header id="global-header">
+        </header>
+        <div id="page-title">
+            <h1>Daily Status</h1>
+        </div>
+        <div id="burst-form">
+            <span id="form-box">
+			 <form>
+			  <h1 class="form-title">Bursts</h1>
+			   <div class="row-1">
+			    <div id="date">
+				   	<p>Date</p>
+				    <select name="Date">
+	                 <option value="04/12/2017">04/12/2017</option>
+	                 <option value="03/12/2017">03/12/2017</option>
+	                 <option value="02/12/2017">02/12/2017</option>
+	                 <option value="01/12/2017">01/12/2017</option>
+	                 <option value="01/12/2017">30/11/2017</option>
+	                 <option value="01/12/2017">29/11/2017</option>
+	                 <option value="01/12/2017">28/11/2017</option>
+	                 <option value="01/12/2017">27/11/2017</option>
+	                </select>
+                <div id="project">
+	                  <p>Project</p>
+				      <select name="Date">
+	                    <option value="N/A">N/A</option>
+	                  </select>
+                </div>
+                <div id="activity-type">
+                 <p>Activity Type</p>
+				     <select name="actvity-type">
+	                   <option value="coding">Coding</option>
+	                   <option value="project-management">Project Management</option>
+	                   <option value="testing">Testing</option>
+	                   <option value="training">Training</option>
+	                   <option value="coding">Coding</option>
+	                   <option value="architecturing">Architecturing</option>
+	                   <option value="System Design">System Design</option>
+	                   <option value="Requirement Analysis">Requirement Analysis</option>
+	                 </select>
+                </div>
+                <div id="time-spent">
+	                 <p>Time Spent(hours:minutes)</p>
+				     <select name="time-spent">
+	                   <option value="0">0</option>
+	                   <option value="1">1</option>
+	                   <option value="2">2</option>
+	                   <option value="3">3</option>
+	                   <option value="4">4</option>
+	                   <option value="5">5</option>
+	                   <option value="6">6</option>
+	                   <option value="7">7</option>
+	                   <option value="8">8</option>
+	                   <option value="9">9</option>
+	                   <option value="10">10</option>
+	                   <option value="11">11</option>
+	                   <option value="12">12</option>
+	                   <option value="13">13</option>
+	                   <option value="14">14</option>
+	                   <option value="15">15</option>
+	                   <option value="16">16</option>
+	                 </select>
+	                   <select name="time-spent">
+	                   <option value="0">0</option>
+	                   <option value="15">15</option>
+	                   <option value="30">30</option>
+	                   <option value="45">45</option>
+	                 </select>
+                </div>
+               </div>
+               <div class="row-2">
+	               	<p>Activity Description</p>
+	               	<input type="text" id="activity-descr" name="activity" placeholder="Use T# or t# in your description to indicate redmine ticket/task">
+	               	<p id="usage-notes">Enter the actual number of hours against each of your project(s). If you're working on multiple projects, submit separate entry for each project. 
+	                If you're not assigned to a project, select the option "N/A" from Project drop down. 
+	                You should book the time against a project if you are contributing your effort, whether you are allocated or not. If you have been working on the project regularly, ask the PM to formally allocate you. 
+	                Please make sure you're not booking time for organizational (non project) activities like pre-sales, trainings, your non project related self learning activity to any project.
+	            </div>
+
+               <div class="row-3">
+               	  <input type="button" name="save" id="save-button" value="Save">
+               </div>
+			 </form>
+		    </span>
+        </div>
+        <div class="timelog-history">
+            <h1 class="form-title history-title">My History</h1>
+            <select name="sort-log" id="sort-log">
+                <option value="all">All</option>
+            </select>
+                <span class="log-row">
+                	<div class="log-row-col-1">
+                		<span>end of day</span>
+                        <br>
+                        <br>
+                        <span>04/12/2017</span>
+                        <br>
+                        <br>
+                        <span>posted on: 04/12/2017</span>
+                    </div>
+                    <div class="log-row-col-2">
+                         <span>
+                         <b>Made site mobile responsive. testing</b>
+                	     </span>
+                    </div>
+                    <div class="log-row-col-3">
+                         <span>8 Hrs</span>
+                         <br>
+                         <span>Coding</span>
+                         <br>
+                         <br>
+                         <span>N/A</span>
+                    </div>
+                </span>
+        </div>
+        <footer id="page-footer">
+        </footer>
+    </main>
+</body>
+
+</html>
