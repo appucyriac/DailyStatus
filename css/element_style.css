@@ -1,0 +1,111 @@
+body{
+	margin: 0;
+}
+header{
+	background-color: #2C3742;
+    height: 50px;
+    width: 100%;
+}
+h1{
+    color:#4c4f53;
+    font-size: 30px;
+    margin-left: 47px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+p{
+	color:black;
+	font-size: 15px;
+}
+footer{
+	background-color: #2C3742;
+    height: 50px;
+    width: 100%;
+    margin: 0	
+}
+/****************************classes and ids *************************************************/
+#form-box{
+    background: white;
+    width: 100;
+    height: 500px;
+    margin-right: 12px;
+    border-style: solid;
+    border-width: thin;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    outline: none;
+    position: relative;
+    margin-left: 47px;
+    color: grey;
+    display: block;
+}
+.form-title{
+	color: black;
+    font-size: larger;
+    margin-left: 15px;
+}
+#date{
+	margin-left: 15px;
+}
+
+#project{
+    margin-left: 150px;
+    margin-top: -66px;
+}
+#activity-type{
+	margin-top: -66px;
+    margin-left: 250px;
+}
+#time-spent{
+	    margin-top: -66px;
+    margin-left: 450px;
+}
+.row-2{
+	margin-left: 15px;
+}
+#activity-descr{
+	width: 500px;
+	height: 100px;
+}
+#usage-notes
+{
+    width: 38em;
+    margin-left: 550px;
+    margin-top: -115px;
+}
+#save-button{
+    margin-left: 530px;
+    margin-top: 180px;
+    width: 84px;
+    height: 30px;
+    background: #087BB1;
+    border-style: none;
+    border-radius: 3px;
+    color: white;
+}
+.history-title{
+	margin-top: 40px;
+}
+#sort-log{
+    float: right;
+    margin-top: -40px;
+    width: 100px;
+    height: 30px;
+}
+.log-row-1{
+    background: white;
+    width: 100%;
+    height: 100px;
+    margin-right: 12px;
+    border-style: solid;
+    border-width: thin;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    outline: none;
+    position: relative;
+    margin-left: 47px;
+    color: grey;
+    display: block;
+    margin-left: 0;
+}
