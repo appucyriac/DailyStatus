@@ -17,9 +17,8 @@ const charCounter = () => {
     $('#character-counter')[0].innerHTML = max - len;
   }
 }
-const storeInput = (date) => {
+const storeInput = () => {
   let empStatus = {
-    id: date,
     date: $("#log-date option:selected").attr('value'),
     project: $("#emp-project option:selected").attr('value'),
     activityType: $("#emp-activity-type option:selected").attr('value'),
