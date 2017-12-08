@@ -44,9 +44,10 @@ const storeInput = () => {
 const repeatRow = (rowNumber) => {
   let clone = $("#emp-log-row").clone(true);
   retrievedData = JSON.parse(localStorage.getItem("empLog"));
-  clone.find("#logged-date")[0].innerHTML = retrievedData[rowNumber].date;
-  clone.find("#log-descr")[0].innerHTML = retrievedData[rowNumber].activityDesc;
-  clone.find("#log-activity")[0].innerHTML = retrievedData[rowNumber].activityType;
+  clone.find(".logged-date")[0].innerHTML = retrievedData[rowNumber].date;
+  clone.find(".log-descr")[0].innerHTML = retrievedData[rowNumber].activityDesc;
+  clone.find(".log-activity")[0].innerHTML = retrievedData[rowNumber].activityType;
+  clone.find(".post-date")[0].innerHTML = "posted on:"+ Date();
   clone.attr("id", "cloned-row-" + rowNumber); /*new id is assigned to cloned row*/
   clone.insertBefore("#emp-log-row");
 }
