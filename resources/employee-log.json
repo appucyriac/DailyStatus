@@ -6,6 +6,10 @@
         "activityType": "Coding",
         "timeSpent":8,
         "activityDescription":"Testing"
-    }]
+    }],
+    "projects":[
+    	{"title":"SampleProject1"},
+    	{"title":"SampleProject2"}
+    ]
 
 }

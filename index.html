@@ -18,7 +18,7 @@
         </div>
         <div id="burst-form">
             <span id="form-box">
-			 <form>
+			 <form id=log-form>
 			  <h1 class="form-title">Bursts</h1>
 			   <div class="row-1">
 			    <div id="date">
@@ -72,11 +72,13 @@
 	                   <option value="30">30</option>
 	                   <option value="45">45</option>
 	                 </select>
+	                <p id="max-limit-warning">You have exceeded your limit of 16.0 hours for the day.</p>
+	                <p id="min-limit-warning">You cant charge 00 hour(s)</p>
                 </div>
                </div>
                <div class="row-2">
 	               	<p>Activity Description</p>
-	               	<textarea type="text" id="activity-descr" name="activity" maxlength="180" onkeyup="charCounter()" placeholder="Use T# or t# in your description to indicate redmine ticket/task"></textarea>
+	               	<textarea type="text" class="activity-descr" name="activity" maxlength="180" onkeyup="charCounter()" placeholder="Use T# or t# in your description to indicate redmine ticket/task" rows="7" cols="100"></textarea>
 	               	<p id="usage-notes">Enter the actual number of hours against each of your project(s). If you're working on multiple projects, submit separate entry for each project. 
 	                If you're not assigned to a project, select the option "N/A" from Project drop down. 
 	                You should book the time against a project if you are contributing your effort, whether you are allocated or not. If you have been working on the project regularly, ask the PM to formally allocate you. 
@@ -102,7 +104,9 @@
                 <option value="all">All</option>
             </select>
                 <ul>
+                    <li id="test"></li>
                     <li id="emp-log-row" class="history-row">
+
 	                  <span class="log-row">
 	                	<div class="log-row-col-1">
 	                		<span>end of day</span>
@@ -128,7 +132,9 @@
 	                         <span class="log-project">N/A</span>
 	                    </div>
 	                  </span>
+
                     </li>
+
                 </ul>
         </div>
       <footer id="page-footer">

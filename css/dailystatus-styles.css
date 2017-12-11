@@ -47,6 +47,10 @@ textarea{
     font-size: 10px;
     padding-top: 10px;
 }
+textarea::placeholder{
+    font-size: 12px;
+    font-family: "sans-serif";
+}
 /***********************************success toaster**************************************************/
 .toaster {       
     background-color: rgb(29, 109, 29);
@@ -58,6 +62,7 @@ textarea{
     top: 58px;
     position: fixed;
     display: none;
+    z-index: 1;
 }
 #success-tick-mark{
  width: 23px;
@@ -126,6 +131,7 @@ textarea{
     padding-left: 10px;
     border:solid 1px lightgray;
     color: #848282;
+    font-size: 13px;
 }
 #activity-descr:hover{
     border:solid 1px #5D98CC;
@@ -146,15 +152,18 @@ top:-35px;
     padding-top: 0;
     padding-left: 13px;
 }
-#empty-warning{
+#empty-warning,#max-limit-warning,#min-limit-warning{
     color:#D56161;
-    font-size: 12px;
+    font-size: 11px;
+    display: none;
+    width: 16em;
+
 }
 #usage-notes
 {
     width: 38em;
     margin-left: 550px;
-    margin-top: -121px;
+    margin-top: -110px;
     color: #666;
 }
 .row-4{
