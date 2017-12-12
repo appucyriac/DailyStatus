@@ -10,12 +10,12 @@ h1{
     color: #4c4f53;
     font-size: 24px;
     margin-left: 47px;
-    font-family: sans-serif;
+    font-family: "Open Sans";
 }
 p{
     font-family:Verdana,sans-serif,Helvetica;
 	color:#332;
-	font-size: 13px;
+	font-size: 12px;
 }
 select{
     background: #fff;
@@ -24,6 +24,11 @@ select{
     height: 30px;
     line-height: 15px;
     font-size: 12px;
+}
+select:hover,select:focus,textarea:hover,textarea:focus{
+    border-width: 1px;
+    border-color: #5D98CC;
+    outline: none;
 }
 ul{
     list-style: none;
@@ -34,11 +39,41 @@ footer{
     width: 100%;
     margin: 0	
 }
+textarea{
+    font-family: "sans-serif";
+    font-size: 10px;
+    padding-top: 10px;
+}
+textarea::placeholder{
+    font-size: 12px;
+    font-family: "sans-serif";
+}
+/***********************************success toaster**************************************************/
+.toaster {       
+    background-color: rgb(29, 109, 29);
+    opacity: 0.8;
+    padding: 30px 85px;
+    border-radius: 18px;
+    color: white;
+    right: 56px;
+    top: 58px;
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+#success-tick-mark{
+ width: 23px;
+    height: 10px;
+    font-size: 66px;
+    position: absolute;
+    top: -4px;
+    left: 23px;
+}
 /****************************classes and ids *************************************************/
 #form-box{
     background: white;
     width: 100;
-    height: 500px;
+    height: 510px;
     margin-right: 12px;
     border-style: solid;
     border-width: thin;
@@ -63,16 +98,25 @@ footer{
 }
 
 #project{
-    margin-left: 250px;
+    margin-left: 234px;
     margin-top: -72px;
+}
+#emp-project{
+    width: 300px;
 }
 #activity-type{
 	margin-top: -72px;
-    margin-left: 450px;
+    margin-left: 600px;
 }
 #time-spent{
 	    margin-top: -72px;
-    margin-left: 750px;
+    margin-left: 812px;
+}
+#hours{
+    width: 80px;
+}
+#minutes{
+    width: 80px;
 }
 .row-2{
 	margin-left: 15px;
@@ -82,38 +126,88 @@ footer{
 	width: 500px;
 	height: 100px;
     padding-left: 10px;
+    border:solid 1px lightgray;
+    color: #848282;
+    font-size: 13px;
 }
+#activity-descr:hover{
+    border:solid 1px #5D98CC;
+}
+#activity-descr:focus{
+    outline: none;
+    border:solid 1px #5D98CC;
+}
+
 #activity-descr::placeholder{
 position: relative;
 top:-35px;
 }
-#usage-notes
-{
-    width: 38em;
-    margin-left: 550px;
-    margin-top: -115px;
+.log-descr{
     color: #666;
+}
+.row-3{
+    padding-top: 0;
+    padding-left: 13px;
+}
+#empty-warning,#max-limit-warning,#min-limit-warning{
+    color:#D56161;
+    font-size: 11px;
+    display: none;
+    width: 16em;
+    margin-top: 1px;
+
+}
+.usage-notes
+{
+    width: 39em;
+    margin-left: 609px;
+    margin-top: -110px;
+    color: #666;
+}
+#usage-notes-two{
+    margin-top: -23px;
+    margin-left: 625px;
+}
+#directions-list{
+    background-position: 0px 50%;
+    padding-left: 16px;
+    font-family:Verdana,sans-serif,Helvetica;
+    color: #666;
+    font-size: 12px;
+    margin-top: 0;
+    margin-left: 609px;
+}
+.row-4{
+    padding-top: 0;
 }
 #character-counter{
     font-size: 15px;
-    margin-left: 15px;
-    margin-top: 30px;
+    margin-left: 0;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.row-5{
+    text-align: center;
+    padding-top: 50px;  
 }
 #save-button{
-    margin-left: 530px;
-    margin-top: 120px;
-    width: 84px;
-    height: 30px;
-    background: #275b89;
+    background: #3276b1;
     border-style: none;
     border-radius: 3px;
     color: white;
+    padding: 10px 20px;
+    outline: none;
+    margin-left: -100px;
+}
+#save-button:focus,#save-button:hover{
+    outline: none;    
+    background: #275b89;
 }
 .history-title{
 	margin-top: 40px;
 
     font-family: sans-serif;
-    margin-left: 43px;
+    margin-left: 47px;
 }
 #sort-log{
     float: right;
@@ -151,9 +245,8 @@ top:-35px;
     color: #666;
 }
 .log-row-col-3{
-	float: right;
+    padding-left: 1078px;
 	margin-top: -36px;
-	margin-right: 96px;
     font-family: Verdana,sans-serif,Helvetica;
     font-size: 12px;
 }
