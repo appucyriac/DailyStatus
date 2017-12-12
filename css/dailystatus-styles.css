@@ -15,7 +15,7 @@ h1{
 p{
     font-family:Verdana,sans-serif,Helvetica;
 	color:#332;
-	font-size: 13px;
+	font-size: 12px;
 }
 select{
     background: #fff;
@@ -25,12 +25,9 @@ select{
     line-height: 15px;
     font-size: 12px;
 }
-select:hover{
+select:hover,select:focus,textarea:hover,textarea:focus{
     border-width: 1px;
     border-color: #5D98CC;
-    outline: none;
-}
-select:focus{
     outline: none;
 }
 ul{
@@ -76,7 +73,7 @@ textarea::placeholder{
 #form-box{
     background: white;
     width: 100;
-    height: 500px;
+    height: 510px;
     margin-right: 12px;
     border-style: solid;
     border-width: thin;
@@ -157,27 +154,41 @@ top:-35px;
     font-size: 11px;
     display: none;
     width: 16em;
+    margin-top: 1px;
 
 }
-#usage-notes
+.usage-notes
 {
-    width: 38em;
-    margin-left: 550px;
+    width: 39em;
+    margin-left: 609px;
     margin-top: -110px;
     color: #666;
+}
+#usage-notes-two{
+    margin-top: -23px;
+    margin-left: 625px;
+}
+#directions-list{
+    background-position: 0px 50%;
+    padding-left: 16px;
+    font-family:Verdana,sans-serif,Helvetica;
+    color: #666;
+    font-size: 12px;
+    margin-top: 0;
+    margin-left: 609px;
 }
 .row-4{
     padding-top: 0;
 }
 #character-counter{
     font-size: 15px;
-    margin-left: 15px;
-    margin-top: 30px;
+    margin-left: 0;
+    margin-top: 20px;
     font-weight: bold;
 }
 .row-5{
     text-align: center;
-    padding-top: 35px;  
+    padding-top: 50px;  
 }
 #save-button{
     background: #3276b1;

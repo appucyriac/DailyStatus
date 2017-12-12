@@ -1,5 +1,5 @@
-let newRowFlag = 0;
-let isAdded = 0;
+let newRowFlag = false;;
+let isAdded = false;
 $(document).ready(() => {
   addPrevSevenDays(); // previous 7 days are added to date dropdown
   if (localStorage.getItem('empLog') !== null) {
@@ -48,9 +48,9 @@ storeInput = () => {
     empLog.push(empStatus);
 
     localStorage.setItem('empLog', JSON.stringify(empLog));
-    newRowFlag = 1;
+    newRowFlag = true;
   }
-  isAdded = 1;
+  isAdded = true;
   $.getJSON("resources/employee-log.json", (data) => {
     data.bursts[0].push(JSON.parse(localStorage.getItem("empLog")));
   });
@@ -74,7 +74,7 @@ repeatRow = (rowNumber) => {
   clone.find(".post-date")[0].innerHTML = "posted on:" + curDate;
   clone.find(".post-time")[0].innerHTML = curTime;
   clone.attr("id", "cloned-row-" + rowNumber); /*new id is assigned to cloned row*/
-  if (newRowFlag == 1) {
+  if (newRowFlag) {
     id = "#cloned-row-" + (rowNumber - 1);
     clone.insertBefore(id);
   } //the newly saved row  will be showed on top
@@ -137,7 +137,7 @@ validateInput = () => {
 
 /**Previous 7 days are added **/
 addPrevSevenDays = () => {
-  let days=[1,2,3,4,5,6,7];
+  let days=[0,1,2,3,4,5,6,];
   for (const value of days) {
     let currentDate = new Date();
     currentDate.setDate((currentDate.getDate()) - value);
@@ -149,11 +149,11 @@ addPrevSevenDays = () => {
 /**Shows the success toaster */
 let showSuccessToaster = () => {
 
-  if (isAdded == 1) {
+  if (isAdded) {
     $("#successToaster").fadeIn();
     setTimeout(() => {
       $("#successToaster").fadeOut();
-      isAdded = 0;
+      isAdded = false;
     }, 2000)
   }
 }
