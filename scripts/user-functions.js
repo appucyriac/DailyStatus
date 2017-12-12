@@ -1,9 +1,25 @@
 let newRowFlag = false;;
 let isAdded = false;
-$(document).ready(() => {
+class localStorageHandler{
+  constructor(){
+
+
+      let ls = window.localStorage;
+      this.get = ((key)=>
+      {
+           return ls.getItem(key);
+      });
+      this.set = ((key, val)=> 
+      {
+           ls.setItem(key,val);
+      });
+  }
+}
+let lsh= new localStorageHandler();
+$(document).ready(() => { 
   addPrevSevenDays(); // previous 7 days are added to date dropdown
-  if (localStorage.getItem('empLog') !== null) {
-    let jsonData = JSON.parse(localStorage.getItem("empLog"));
+  if (lsh.get('empLog') !== null) {
+    let jsonData = JSON.parse(lsh.get("empLog"));
     let arrayLength = ((jsonData.length) - 1);
     jsonData.forEach((value) => {
       repeatRow(arrayLength);//display my history rows
@@ -39,22 +55,22 @@ storeInput = () => {
     timeSpent: $("#hours option:selected").attr('value') + ":" + $("#minutes option:selected").attr('value'),
     activityDesc: $(".activity-descr")[0].value
   }
-  if (localStorage.getItem('empLog') === null) {
+  if (lsh.get('empLog') === null) {
     let empLog = [];
     empLog.push(empStatus);
-    localStorage.setItem('empLog', JSON.stringify(empLog));
+    lsh.set('empLog', JSON.stringify(empLog));
   } else {
-    let empLog = JSON.parse(localStorage.getItem("empLog"));
+    let empLog = JSON.parse(lsh.get("empLog"));
     empLog.push(empStatus);
 
-    localStorage.setItem('empLog', JSON.stringify(empLog));
+    lsh.set('empLog', JSON.stringify(empLog));
     newRowFlag = true;
   }
   isAdded = true;
   $.getJSON("resources/employee-log.json", (data) => {
-    data.bursts[0].push(JSON.parse(localStorage.getItem("empLog")));
+    data.bursts.push(JSON.parse(lsh.get("empLog")));
   });
-  repeatRow((JSON.parse(localStorage.getItem("empLog"))).length - 1);//for displaying the newly saved row
+  repeatRow((JSON.parse(lsh.get("empLog"))).length - 1);//for displaying the newly saved row
 
 }
 
@@ -65,7 +81,7 @@ repeatRow = (rowNumber) => {
   curDate = tempdt.substring(4, 15);
   curTime = tempdt.substring(16, 24);
   let clone = $("#emp-log-row").clone(true);
-  retrievedData = JSON.parse(localStorage.getItem("empLog"));
+  retrievedData = JSON.parse(lsh.get("empLog"));
   clone.find(".logged-date")[0].innerHTML = retrievedData[rowNumber].date;
   clone.find(".log-time")[0].innerHTML = retrievedData[rowNumber].timeSpent + " hour(s)";
   clone.find(".log-descr")[0].innerHTML = retrievedData[rowNumber].activityDesc;
@@ -87,6 +103,7 @@ validateInput = () => {
 
   $("#max-limit-warning").hide()
   $("#min-limit-warning").hide();
+  $("#empty-warning").hide();
   if ($(".activity-descr")[0].value == "") { //validate activity description
     var input = $(".activity-descr");
     if (!input.val()) {
@@ -100,7 +117,7 @@ validateInput = () => {
     } else if ((($("#hours option:selected").attr('value') == "0") && ($("#minutes option:selected").attr('value') == "0"))) {
       $("#min-limit-warning").show(); //time spent cant be zero
     } else if ($("#hours option:selected").attr('value') != "16") {
-      retrievedData = JSON.parse(localStorage.getItem("empLog"));
+      retrievedData = JSON.parse(lsh.get("empLog"));
       if (retrievedData === null) {
         retrievedData = [];
       }
