@@ -1,12 +1,12 @@
 let newRowFlag = 0;
 let isAdded = 0;
 $(document).ready(() => {
-  addPrevSevenDays();
+  addPrevSevenDays(); // previous 7 days are added to date dropdown
   if (localStorage.getItem('empLog') !== null) {
     let jsonData = JSON.parse(localStorage.getItem("empLog"));
     let arrayLength = ((jsonData.length) - 1);
     jsonData.forEach((value) => {
-      repeatRow(arrayLength);
+      repeatRow(arrayLength);//display my history rows
       arrayLength--;
     });
   }
@@ -15,13 +15,13 @@ $(document).ready(() => {
     let arrayLength = data.projects.length;
     data.projects.forEach((value) => {
       next = data.projects[arrayLength - 1].title;
-      $("#emp-project").append("<option value=" + next + ">" + next + "</option>");
+      $("#emp-project").append("<option value=" + next + ">" + next + "</option>");//projects are appended
       arrayLength--;
     });
   });
 });
 
-
+/** Counts input characters in activity description**/
 charCounter = () => {
   let max = 180;
   let len = $('.activity-descr').val().length;
@@ -29,6 +29,7 @@ charCounter = () => {
     $('#character-counter')[0].innerHTML = max - len;
   }
 }
+/** Saves input data **/
 storeInput = () => {
 
   let empStatus = {
@@ -53,10 +54,11 @@ storeInput = () => {
   $.getJSON("resources/employee-log.json", (data) => {
     data.bursts[0].push(JSON.parse(localStorage.getItem("empLog")));
   });
-  repeatRow((JSON.parse(localStorage.getItem("empLog"))).length - 1);
+  repeatRow((JSON.parse(localStorage.getItem("empLog"))).length - 1);//for displaying the newly saved row
 
 }
 
+/** Displays my history row**/
 repeatRow = (rowNumber) => {
   let tempdt = new Date();
   tempdt = tempdt.toString();
@@ -79,6 +81,8 @@ repeatRow = (rowNumber) => {
   else
     clone.insertBefore("#emp-log-row"); //for displaying all rows on each page load
 }
+
+/**'activity description' and 'time spent' are validated**/
 validateInput = () => {
 
   $("#max-limit-warning").hide()
@@ -131,6 +135,7 @@ validateInput = () => {
   }
 }
 
+/**Previous 7 days are added **/
 addPrevSevenDays = () => {
   let days=[1,2,3,4,5,6,7];
   for (const value of days) {
