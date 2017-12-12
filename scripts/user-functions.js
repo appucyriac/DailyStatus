@@ -132,9 +132,10 @@ validateInput = () => {
 }
 
 addPrevSevenDays = () => {
-  for (let i = 0; i <= 6; i++) {
+  let days=[1,2,3,4,5,6,7];
+  for (const value of days) {
     let currentDate = new Date();
-    currentDate.setDate((currentDate.getDate()) - i);
+    currentDate.setDate((currentDate.getDate()) - value);
     let next = [currentDate.getDate(), (currentDate.getMonth() + 1), currentDate.getFullYear()].join("/");
     $("#log-date").append("<option value=" + next + ">" + next + "</option>");
   }
